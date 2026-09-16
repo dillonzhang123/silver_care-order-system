@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>养老订单管理系统</title>
+    <style>
+        /* 适老化基础设置：大字体，高对比度 */
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background-color: #f0f4f8; /* 柔和的浅蓝灰背景，不刺眼 */
+            padding: 20px;
+            font-size: 18px; /* 基础字号调大 */
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        /* 表格样式：清晰易读 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 18px 15px; /* 增加内边距，让行距更宽松 */
+            text-align: left;
+            border-bottom: 1px solid #e0e6ed;
+        }
+
+        th {
+            background-color: #4a90e2; /* 专业且温和的蓝色 */
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f9fbfd; /* 鼠标悬停高亮，方便阅读 */
+        }
+
+        /* 状态标签样式 */
+        .status {
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .status-pending { background-color: #fff3cd; color: #856404; } /* 待接单：黄色 */
+        .status-progress { background-color: #cce5ff; color: #004085; } /* 服务中：蓝色 */
+        .status-done { background-color: #d4edda; color: #155724; } /* 已完成：绿色 */
+        .status-cancelled { background-color: #f8d7da; color: #721c24; } /* 已取消：红色 */
+
+        /* 按钮样式：大而好点 */
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.8; }
+        .btn-accept { background-color: #28a745; color: white; } /* 接单：绿色 */
+        .btn-complete { background-color: #007bff; color: white; } /* 完成：蓝色 */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>👴 养老订单管理列表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>老人姓名</th>
+                    <th>服务项目</th>
+                    <th>预约时间</th>
+                    <th>当前状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 第一行：待接单 -->
+                <tr>
+                    <td>ORD-20231024-001</td>
+                    <td>张大爷</td>
+                    <td>上门助浴</td>
+                    <td>2023-10-25 14:00</td>
+                    <td><span class="status status-pending">待接单</span></td>
+                    <td><button class="btn btn-accept">立即接单</button></td>
+                </tr>
+                <!-- 第二行：服务中 -->
+                <tr>
+                    <td>ORD-20231024-002</td>
+                    <td>李奶奶</td>
+                    <td>陪同就医</td>
+                    <td>2023-10-25 09:30</td>
+                    <td><span class="status status-progress">服务中</span></td>
+                    <td><button class="btn btn-complete">完成服务</button></td>
+                </tr>
+                <!-- 第三行：已完成 -->
+                <tr>
+                    <td>ORD-20231023-015</td>
+                    <td>王爷爷</td>
+                    <td>居家保洁</td>
+                    <td>2023-10-24 15:00</td>
+                    <td><span class="status status-done">已完成</span></td>
+                    <td>-</td>
+                </tr>
+                <!-- 第四行：已取消 -->
+                <tr>
+                    <td>ORD-20231023-012</td>
+                    <td>赵奶奶</td>
+                    <td>助餐服务</td>
+                    <td>2023-10-24 11:30</td>
+                    <td><span class="status status-cancelled">已取消</span></td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
